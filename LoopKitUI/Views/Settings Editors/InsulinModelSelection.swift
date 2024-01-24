@@ -163,6 +163,13 @@ public struct InsulinModelSelection: View {
                 )
                 .padding(.vertical, 4)
                 .padding(.bottom, 4)
+                CheckmarkListItem(
+                    title: Text(ExponentialInsulinModelPreset.rapidActingChildExtDia.title),
+                    description: Text(ExponentialInsulinModelPreset.rapidActingChildExtDia.subtitle),
+                    isSelected: isSelected(ExponentialInsulinModelPreset.rapidActingChildExtDia)
+                )
+                .padding(.vertical, 4)
+                .padding(.bottom, 4)
             }
             .buttonStyle(PlainButtonStyle()) // Disable row highlighting on selection
         }
@@ -178,7 +185,8 @@ public struct InsulinModelSelection: View {
     var selectableInsulinModelSettings: [ExponentialInsulinModelPreset] {
         return [
             .rapidActingAdult,
-            .rapidActingChild
+            .rapidActingChild,
+            .rapidActingChildExtDia
         ]
     }
 

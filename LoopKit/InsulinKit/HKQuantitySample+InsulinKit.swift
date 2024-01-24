@@ -197,6 +197,7 @@ extension HKQuantitySample {
 
 enum InsulinTypeHealthKitRepresentation: String {
     case novolog = "Novolog"
+    case novologExtDia = "Novolog (Ext DIA 8 Hr)"
     case humalog = "Humalog"
     case apidra = "Apidra"
     case fiasp = "Fiasp"
@@ -208,6 +209,8 @@ extension InsulinType {
     var healthKitRepresentation: String {
         switch self {
         case .novolog:
+            return InsulinTypeHealthKitRepresentation.novolog.rawValue
+        case .novologExtDia:
             return InsulinTypeHealthKitRepresentation.novolog.rawValue
         case .humalog:
             return InsulinTypeHealthKitRepresentation.humalog.rawValue
@@ -226,6 +229,8 @@ extension InsulinType {
         switch healthKitRepresentation {
         case InsulinTypeHealthKitRepresentation.novolog.rawValue:
             self = .novolog
+        case InsulinTypeHealthKitRepresentation.novologExtDia.rawValue:
+            self = .novologExtDia
         case InsulinTypeHealthKitRepresentation.humalog.rawValue:
             self = .humalog
         case InsulinTypeHealthKitRepresentation.apidra.rawValue:

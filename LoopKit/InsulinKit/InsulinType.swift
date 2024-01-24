@@ -10,6 +10,7 @@ import Foundation
 
 public enum InsulinType: Int, Codable, CaseIterable {
     case novolog
+    case novologExtDia
     case humalog
     case apidra
     case fiasp
@@ -20,6 +21,8 @@ public enum InsulinType: Int, Codable, CaseIterable {
         switch self {
         case .novolog:
             return LocalizedString("Novolog (insulin aspart)", comment: "Title for Novolog insulin type")
+        case .novologExtDia:
+            return LocalizedString("Novolog (insulin aspart) (Ext DIA 8 Hr)", comment: "Title for Novolog insulin type (Ext DIA 8 Hr)")
         case .humalog:
             return LocalizedString("Humalog (insulin lispro)", comment: "Title for Humalog insulin type")
         case .apidra:
@@ -36,7 +39,9 @@ public enum InsulinType: Int, Codable, CaseIterable {
     public var brandName: String {
         switch self {
         case .novolog:
-            return LocalizedString("Novolog", comment: "Brand name for novolog insulin type")
+            return LocalizedString("Novolog", comment: "Brand name for novolog insulin type") 
+        case .novologExtDia:
+            return LocalizedString("Novolog (Ext DIA 8 Hr)", comment: "Brand name for novolog (Ext DIA 8 Hr) insulin type")
         case .humalog:
             return LocalizedString("Humalog", comment: "Brand name for humalog insulin type")
         case .apidra:
@@ -54,6 +59,8 @@ public enum InsulinType: Int, Codable, CaseIterable {
         switch self {
         case .novolog:
             return LocalizedString("NovoLog (insulin aspart) is a rapid-acting insulin made by Novo Nordisk", comment: "Description for novolog insulin type")
+        case .novologExtDia:
+            return LocalizedString("NovoLog (insulin aspart) (Ext DIA 8 Hr) is a rapid-acting insulin made by Novo Nordisk", comment: "Description for novolog  (Ext DIA 8 Hr) insulin type")
         case .humalog:
             return LocalizedString("Humalog (insulin lispro) is a rapid-acting insulin made by Eli Lilly", comment: "Description for humalog insulin type")
         case .apidra:

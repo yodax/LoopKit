@@ -15,6 +15,7 @@ public struct StoredInsulinModel: Codable, Equatable {
         case lyumjev
         case rapidAdult
         case rapidChild
+        case rapidChildExtDia
     }
 
     public let modelType: ModelType
@@ -45,6 +46,8 @@ public extension StoredInsulinModel {
             modelType = .rapidAdult
         case .rapidActingChild:
             modelType = .rapidChild
+        case .rapidActingChildExtDia:
+            modelType = .rapidChildExtDia
         }
 
         self.init(modelType: modelType, delay: preset.delay, actionDuration: preset.actionDuration, peakActivity: preset.peakActivity)
@@ -56,6 +59,8 @@ public extension StoredInsulinModel {
             return .rapidActingAdult
         case .rapidChild:
             return .rapidActingChild
+        case .rapidChildExtDia:
+            return .rapidActingChildExtDia
         default:
             return nil
         }
